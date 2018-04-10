@@ -1,0 +1,5 @@
+Main - main stuff
+Game - Get player names, Generate random number, Display lose message***, Display Random message***, Before turn offer to pay to skip turn... player has no money
+Player(Struct) - Money, Name, Current Round, 
+ScoreBoard - Take in data from a file, display data***, Save Data on program close
+rnjesus
