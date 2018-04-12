@@ -1,10 +1,10 @@
 #include "Player.h"
+#include <string>
 
 
-
-Player::Player()
+Player::Player(string name)
 {
-	mName = "";
+	mName = name;
 	mRoundCounter = mBtc = 0;
 }
 
@@ -37,6 +37,10 @@ bool Player::subtract(int reduce)
 		mBtc -= reduce;
 		return true;
 	}
+}
+
+Player::Player()
+{
 }
 
 Player::~Player()
