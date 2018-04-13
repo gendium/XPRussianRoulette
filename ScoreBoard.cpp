@@ -8,7 +8,12 @@ ScoreBoard::ScoreBoard()
 
 bool ScoreBoard::uploadScoreBoard()
 {
-	return false;
+	ofstream file;
+	file.open("scores.txt");
+	for (auto it = mScores.cbegin(); it != mScores.cend(); ++it)
+	{
+		file << it->first << "," << it->second << endl;
+	}
 }
 
 void ScoreBoard::getScores()
