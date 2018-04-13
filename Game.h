@@ -19,8 +19,8 @@ public:
 	Player getPlayer();
 	bool getLoss();
 	void playGame();
-	string playRound();
-	string randomEvent();
+	string playRound(string choice);
+	string randomEvent(int r);
 	string moneySkip();
 };
 

@@ -15,7 +15,6 @@ void ScoreBoard::uploadScoreBoard()
 		file << it->first << "," << it->second << endl;
 	}
 
-	return true;
 }
 
 void ScoreBoard::getScores()

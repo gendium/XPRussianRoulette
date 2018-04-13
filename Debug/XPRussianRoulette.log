@@ -1,2 +1,3 @@
-﻿  ScoreBoard.cpp
-  XPRussianRoulette.vcxproj -> C:\Users\Stephenry\Desktop\XPRussianRoulette\Debug\XPRussianRoulette.exe
+﻿  Game.cpp
+c:\users\anthony.taylor\desktop\xprussianroulette-master\game.cpp(36): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+  XPRussianRoulette.vcxproj -> C:\Users\anthony.taylor\Desktop\XPRussianRoulette-master\Debug\XPRussianRoulette.exe

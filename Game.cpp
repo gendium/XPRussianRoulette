@@ -33,6 +33,8 @@ void Game::playGame()
 {
 	char choice = 'y';
 	ScoreBoard sb;
+	srand(time(0));
+	int r;
 	choosePlayer();
 	
 	while ((choice != 'N' && choice != 'n') && !getLoss())
@@ -41,7 +43,14 @@ void Game::playGame()
 		cin >> choice;
 
 		if (choice == 'Y' || choice == 'y')
-			cout << playRound() << endl;
+		{
+			r = (rand() % 4);
+			string rng = randomEvent(r);
+			if (rng == "")
+				rng = moneySkip();
+			cout << playRound(rng) << endl;
+		}
+			
 
 		else if (choice == 'S' || choice == 's')
 			cout << sb.displayScoreBoard() << endl;
@@ -51,23 +60,21 @@ void Game::playGame()
 
 }
 
-string Game::playRound()
+string Game::playRound(string choice)
 {
 	Player player = getPlayer();
-	string rng = randomEvent();
-	if(rng == "")
-		rng = moneySkip();
+	
 	player.addRound(1);
-	setPlayer(player);
 
-	if (rng == "skip")
+	if (choice == "skip")
 	{
 		return "You skipped a turn!!\n";
 	}
-	else if (rng == "You got 5 btc")
+	else if (choice == "You got 5 btc")
 	{
 		player.addBTC(5);
-		return rng + "\n";
+		setPlayer(player);
+		return choice + "\n";
 	}
 
 	else 
@@ -77,11 +84,9 @@ string Game::playRound()
 	}
 }
 
-string Game::randomEvent()
+string Game::randomEvent(int r)
 {
 	//Handle any of the math that is happening to player values here
-	srand(time(0));
-	int r = (rand() % 4);
 	string temp;
 	switch (r) {
 	case 0:
@@ -108,7 +113,7 @@ string Game::moneySkip()
 
 	if (tmpPlayer.getBTC() >= 5)
 	{
-		char choice;
+		char choice = 'Y';
 		cout << "you have " << tmpPlayer.getBTC() << " btc\n";
 		cout << "Would you like to pay 5 BTC to skip this round? (Y/N)\n";
 		cin >> choice;

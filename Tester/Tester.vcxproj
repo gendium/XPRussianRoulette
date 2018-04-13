@@ -33,10 +33,14 @@
   <ImportGroup Label="PropertySheets" />
   <PropertyGroup Label="UserMacros" />
   <ItemGroup>
+    <ClInclude Include="..\Game.h" />
+    <ClInclude Include="..\Player.h" />
     <ClInclude Include="..\ScoreBoard.h" />
     <ClInclude Include="pch.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="..\Game.cpp" />
+    <ClCompile Include="..\Player.cpp" />
     <ClCompile Include="..\ScoreBoard.cpp" />
     <ClCompile Include="test.cpp" />
     <ClCompile Include="pch.cpp">
