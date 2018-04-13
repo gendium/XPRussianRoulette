@@ -14,7 +14,7 @@ void ScoreBoard::uploadScoreBoard()
 	{
 		file << it->first << "," << it->second << endl;
 	}
-
+	file.close();
 }
 
 void ScoreBoard::getScores()
@@ -38,11 +38,6 @@ void ScoreBoard::getScores()
 			mScores.insert(pair<string, int>(values[0], stoi(values[1])));
 		
 
-
-	}
-	for (auto it = mScores.cbegin(); it != mScores.cend(); ++it)
-	{
-		cout << it->first << " : " << it->second << endl;
 
 	}
 }

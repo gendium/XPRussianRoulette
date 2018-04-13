@@ -57,6 +57,15 @@ void Game::playGame()
 	}
 	
 	cout << "Thanks for playing!!\n";
+	cout << "Would you like to upload your score? (Y)\n";
+	cin >> choice;
+	if (choice == 'y' || choice == 'Y') {
+		ScoreBoard sb;
+		cout << "Uploading Scores...\n";
+		sb.getScores();
+		sb.mScores.insert(pair<string, int>(getPlayer().getName(), getPlayer().getRoundCounter()));
+		sb.uploadScoreBoard();
+	}
 
 }
 
@@ -68,6 +77,7 @@ string Game::playRound(string choice)
 
 	if (choice == "skip")
 	{
+		setPlayer(player);
 		return "You skipped a turn!!\n";
 	}
 	else if (choice == "You got 5 btc")
@@ -80,8 +90,10 @@ string Game::playRound(string choice)
 	else 
 	{
 		setLoss(true);
+		setPlayer(player);
 		return "Sorry, you Lose\n";
 	}
+
 }
 
 string Game::randomEvent(int r)
