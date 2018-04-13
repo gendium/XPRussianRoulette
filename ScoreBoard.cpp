@@ -23,16 +23,18 @@ void ScoreBoard::getScores()
 	}
 }
 
-void ScoreBoard::displayScoreBoard()
+string ScoreBoard::displayScoreBoard()
 {
 	ifstream file;
 	string line;
+	string toReturn = "";
 	file.open("scores.txt");
 	while (getline(file, line))
 	{
-		cout << line << "\n";
+		toReturn += line + "\n";
 	}
 	file.close();
+	return toReturn;
 }
 ScoreBoard::~ScoreBoard()
 {

@@ -12,7 +12,7 @@ public:
 	ScoreBoard();
 	bool uploadScoreBoard();
 	void getScores();
-	void displayScoreBoard();
+	string displayScoreBoard();
 	~ScoreBoard();
 };
 
