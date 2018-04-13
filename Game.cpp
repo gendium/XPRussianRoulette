@@ -55,20 +55,14 @@ string Game::playRound()
 {
 	Player player = getPlayer();
 	string rng = randomEvent();
-
-	if (rng != "")
-	{
-		return rng;
-	}
-
-	rng = moneySkip();
+	if(rng == "")
+		rng = moneySkip();
 	player.addRound(1);
 	setPlayer(player);
 
 	if (rng == "skip")
 	{
-		cout << "You skipped a turn!!";
-		return "\n";
+		return "You skipped a turn!!\n";
 	}
 	else if (rng == "You got 5 btc")
 	{
@@ -79,7 +73,7 @@ string Game::playRound()
 	else 
 	{
 		setLoss(true);
-		return "Sorry, you Lose";
+		return "Sorry, you Lose\n";
 	}
 }
 
@@ -122,13 +116,10 @@ string Game::moneySkip()
 		if (choice == 'Y' || choice == 'y')
 		{
 			tmpPlayer.subtract(5);
-<<<<<<< HEAD
 			cout << "You have " << tmpPlayer.getBTC() << " BTC left\n";
 			setPlayer(tmpPlayer);
-=======
-			cout << tmpPlayer.getBTC() << endl;
-			//setPlayer(tmpPlayer);
->>>>>>> d9a7d11e005ba2fb9b94b5ab5ff29b08d0b6ab7f
+
+			
 			return "skip";
 		}
 	}

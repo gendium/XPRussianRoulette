@@ -11,15 +11,21 @@ TEST(TestCaseName, TestName) {
 //Alec
 //Write Test for Game.playRound
 TEST(TestCaseName1, TestName1) {
-	EXPECT_EQ(1, 1);
-	EXPECT_TRUE(true);
+	Game mGame;
+	Player mPlayer("test");
+	mGame.setPlayer(mPlayer);
+	string returned = mGame.playRound();
+	ASSERT_EQ(returned, "You skipped a turn!!\n" || "You got 5 btc\n" || "Sorry, you Lose\n")
 }
 
 //Alec
 //User offered to pay money to skip a round (Game.moneySkip)
-TEST(TestCaseName2, TestName2) {
-	EXPECT_EQ(1, 1);
-	EXPECT_TRUE(true);
+TEST(MoneySkip, TestName2) {
+	Game mGame;
+	Player mPlayer("test");
+	mPlayer.addBTC(5);
+	mGame.setPlayer(mPlayer);
+	ASSERT_EQ("skip", mGame.playRound());
 }
 
 //Tony
