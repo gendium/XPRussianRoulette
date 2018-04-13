@@ -4,7 +4,6 @@
 
 ScoreBoard::ScoreBoard()
 {
-	//mScores = new map<string, double>();
 }
 
 bool ScoreBoard::uploadScoreBoard()
@@ -15,10 +14,29 @@ bool ScoreBoard::uploadScoreBoard()
 void ScoreBoard::getScores()
 {
 	ifstream file;
-	string line;
+	string line, temp, data;
 	file.open("scores.txt");
+	string values [2];
+	int i = 0;
 	while (getline(file, line)) {
 		stringstream ss(line);
+		while (getline(ss, temp, ','))
+		{
+			if (i % 2 == 0)
+				values[0] = temp;
+			else
+				values[1] = temp;
+			i++;
+		}
+		if (i % 2 == 0)
+			mScores.insert(pair<string, double>(values[0], stod(values[1])));
+		
+
+
+	}
+	for (auto it = mScores.cbegin(); it != mScores.cend(); ++it)
+	{
+		cout << it->first << " : " << it->second << endl;
 
 	}
 }
