@@ -9,7 +9,7 @@ using namespace std;
 class ScoreBoard
 {
 public:
-	map<string, double> mScores;
+	map<string, int> mScores;
 	ScoreBoard();
 	bool uploadScoreBoard();
 	void getScores();
