@@ -1,5 +1,6 @@
 #pragma once
 #include "Game.h"
+#include "Scoreboard.h"
 #include <string>
 #include <iostream>
 
@@ -31,15 +32,19 @@ void Game::choosePlayer()
 void Game::playGame()
 {
 	char choice = 'y';
+	ScoreBoard sb;
 	choosePlayer();
 	
 	while ((choice != 'N' && choice != 'n') && !getLoss())
 	{
-		cout << "\nWould you like to press your luck?!?!? (Y/N)\n";
+		cout << "\nWould you like to press your luck?!?!? (Y/N)\n Or Display the Score Board? (S)\n";
 		cin >> choice;
 
 		if (choice == 'Y' || choice == 'y')
 			cout << playRound() << endl;
+
+		else if (choice == 'S' || choice == 's')
+			cout << sb.displayScoreBoard() << endl;
 	}
 	
 	cout << "Thanks for playing!!\n";
@@ -93,7 +98,7 @@ string Game::moneySkip()
 		if (choice == 'Y' || choice == 'y')
 		{
 			tmpPlayer.subtract(5);
-			cout << tmpPlayer.getBTC();
+			cout << "You have " << tmpPlayer.getBTC() << " BTC left\n";
 			setPlayer(tmpPlayer);
 			return "skip";
 		}

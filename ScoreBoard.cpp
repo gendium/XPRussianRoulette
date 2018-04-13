@@ -14,6 +14,8 @@ bool ScoreBoard::uploadScoreBoard()
 	{
 		file << it->first << "," << it->second << endl;
 	}
+
+	return true;
 }
 
 void ScoreBoard::getScores()
@@ -52,11 +54,17 @@ string ScoreBoard::displayScoreBoard()
 	string line;
 	string toReturn = "";
 	file.open("scores.txt");
+	if (!file.is_open())
+	{
+		return "File Not Found!!";
+	}
+
 	while (getline(file, line))
 	{
 		toReturn += line + "\n";
 	}
 	file.close();
+	
 	return toReturn;
 }
 ScoreBoard::~ScoreBoard()
