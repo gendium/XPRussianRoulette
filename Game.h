@@ -18,5 +18,6 @@ public:
 	void playGame();
 	string playRound();
 	string randomEvent();
+	string moneySkip();
 };
 

@@ -38,7 +38,7 @@ void Game::playGame()
 		cout << "\nWould you like to press your luck?!?!? (Y/N)\n";
 		cin >> choice;
 
-		if (choice == 'y' || choice == 'y')
+		if (choice == 'Y' || choice == 'y')
 			cout << playRound() << endl;
 	}
 	
@@ -55,6 +55,14 @@ string Game::playRound()
 		return rng;
 	}
 
+	rng = moneySkip();
+
+	if (rng == "skip")
+	{
+		cout << "You skipped a turn!!";
+		return "\n";
+	}
+
 	else
 	{
 		setLoss(true);
@@ -65,6 +73,28 @@ string Game::playRound()
 string Game::randomEvent()
 {
 	//Handle any of the math that is happening to player values here
+	return "";
+}
+
+string Game::moneySkip()
+{
+	Player tmpPlayer = getPlayer();
+
+	if (tmpPlayer.getBTC() >= 5)
+	{
+		char choice;
+
+		cout << "Would you like to pay 5 BTC to skip this round? (Y/N)";
+		cin >> choice;
+
+		if (choice == 'Y' || choice == 'y')
+		{
+			tmpPlayer.subtract(5);
+			cout << tmpPlayer.getBTC();
+			setPlayer(tmpPlayer);
+			return "skip";
+		}
+	}
 	return "";
 }
 

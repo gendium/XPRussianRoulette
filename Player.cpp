@@ -5,7 +5,8 @@
 Player::Player(string name)
 {
 	mName = name;
-	mRoundCounter = mBtc = 0;
+	mRoundCounter = 0;
+	mBtc = 10;
 }
 
 string Player::getName()
