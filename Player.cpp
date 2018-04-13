@@ -14,6 +14,11 @@ string Player::getName()
 	return mName;
 }
 
+void Player::uploadPlayer(ScoreBoard sb)
+{
+	sb.mScores.insert(pair<string, int>(mName, mRoundCounter));
+}
+
 int Player::getRoundCounter()
 {
 	return mRoundCounter;

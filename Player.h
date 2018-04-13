@@ -1,4 +1,5 @@
 #pragma once
+#include "ScoreBoard.h"
 #include <string>
 
 using namespace std;
@@ -12,6 +13,7 @@ public:
 	Player(string name);
 	~Player();
 	string getName();
+	void uploadPlayer(ScoreBoard sb);
 	int getRoundCounter();
 	void addRound(int add);
 	int getBTC();

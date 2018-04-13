@@ -9,9 +9,9 @@ using namespace std;
 class ScoreBoard
 {
 public:
-	map<string, double> mScores;
+	map<string, int> mScores;
 	ScoreBoard();
-	bool uploadScoreBoard();
+	void uploadScoreBoard();
 	void getScores();
 	string displayScoreBoard();
 	~ScoreBoard();

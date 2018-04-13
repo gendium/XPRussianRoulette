@@ -1,6 +1,9 @@
 #pragma once
 #include "Player.h"
+#include <ctime>
+#include <cstdlib>
 
+using namespace std;
 class Game
 {
 private:

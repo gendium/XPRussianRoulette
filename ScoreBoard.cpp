@@ -6,7 +6,7 @@ ScoreBoard::ScoreBoard()
 {
 }
 
-bool ScoreBoard::uploadScoreBoard()
+void ScoreBoard::uploadScoreBoard()
 {
 	ofstream file;
 	file.open("scores.txt");
@@ -36,7 +36,7 @@ void ScoreBoard::getScores()
 			i++;
 		}
 		if (i % 2 == 0)
-			mScores.insert(pair<string, double>(values[0], stod(values[1])));
+			mScores.insert(pair<string, int>(values[0], stoi(values[1])));
 		
 
 
