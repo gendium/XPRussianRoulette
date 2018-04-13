@@ -4,12 +4,12 @@
 
 ScoreBoard::ScoreBoard()
 {
-	mScores = new map<string, double>();
+	//mScores = new map<string, double>();
 }
 
 bool ScoreBoard::uploadScoreBoard()
 {
-
+	return false;
 }
 
 void ScoreBoard::getScores()

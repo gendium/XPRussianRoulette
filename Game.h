@@ -11,12 +11,12 @@ public:
 	Game();
 	~Game();
 	void choosePlayer();
-	void Game::setLoss(bool loss);
+	void setLoss(bool loss);
 	void setPlayer(Player player);
-	Player Game::getPlayer();
-	bool Game::getLoss();
-	void Game::playGame();
-	string Game::playRound();
-	string Game::randomEvent();
+	Player getPlayer();
+	bool getLoss();
+	void playGame();
+	string playRound();
+	string randomEvent();
 };
 

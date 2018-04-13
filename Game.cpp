@@ -22,7 +22,7 @@ Player Game::getPlayer()
 void Game::choosePlayer()
 {
 	string playerName;
-	cout << "Enter player 1 name:  ";
+	cout << "Enter player name:  ";
 	getline(cin, playerName);
 	Player player(playerName);
 	setPlayer(player);
@@ -78,7 +78,7 @@ bool Game::getLoss()
 	return mLoss;
 }
 
-void Game::setPlayer(Player player1)
+void Game::setPlayer(Player player)
 {
-	mPlayer = player1;
+	mPlayer = player;
 }
