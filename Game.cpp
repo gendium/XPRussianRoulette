@@ -66,6 +66,9 @@ void Game::playGame()
 		sb.mScores.insert(pair<string, int>(getPlayer().getName(), getPlayer().getRoundCounter()));
 		sb.uploadScoreBoard();
 	}
+	else {
+		cout << "FINE!\n";
+	}
 
 }
 
