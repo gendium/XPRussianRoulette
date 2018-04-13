@@ -1,11 +1,12 @@
 #include "Player.h"
+#include <string>
 
 
-
-Player::Player()
+Player::Player(string name)
 {
-	mName = "";
-	mRoundCounter = mBtc = 0;
+	mName = name;
+	mRoundCounter = 0;
+	mBtc = 10;
 }
 
 string Player::getName()
@@ -16,6 +17,11 @@ string Player::getName()
 int Player::getRoundCounter()
 {
 	return mRoundCounter;
+}
+
+void Player::addRound(int add)
+{
+	mRoundCounter += 1;
 }
 
 int Player::getBTC()
@@ -37,6 +43,10 @@ bool Player::subtract(int reduce)
 		mBtc -= reduce;
 		return true;
 	}
+}
+
+Player::Player()
+{
 }
 
 Player::~Player()
