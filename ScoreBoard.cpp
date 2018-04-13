@@ -6,7 +6,7 @@ ScoreBoard::ScoreBoard()
 {
 }
 
-bool ScoreBoard::uploadScoreBoard()
+void ScoreBoard::uploadScoreBoard()
 {
 	ofstream file;
 	file.open("scores.txt");

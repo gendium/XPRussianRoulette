@@ -11,7 +11,7 @@ class ScoreBoard
 public:
 	map<string, int> mScores;
 	ScoreBoard();
-	bool uploadScoreBoard();
+	void uploadScoreBoard();
 	void getScores();
 	string displayScoreBoard();
 	~ScoreBoard();
