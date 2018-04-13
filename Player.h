@@ -13,6 +13,7 @@ public:
 	~Player();
 	string getName();
 	int getRoundCounter();
+	void addRound(int add);
 	int getBTC();
 	void addBTC(int append);
 	bool subtract(int reduce);

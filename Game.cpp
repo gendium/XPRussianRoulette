@@ -48,6 +48,7 @@ void Game::playGame()
 
 string Game::playRound()
 {
+	Player player = getPlayer();
 	string rng = randomEvent();
 
 	if (rng != "")
@@ -56,6 +57,8 @@ string Game::playRound()
 	}
 
 	rng = moneySkip();
+	player.addRound(1);
+	setPlayer(player);
 
 	if (rng == "skip")
 	{

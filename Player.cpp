@@ -19,6 +19,11 @@ int Player::getRoundCounter()
 	return mRoundCounter;
 }
 
+void Player::addRound(int add)
+{
+	mRoundCounter += 1;
+}
+
 int Player::getBTC()
 {
 	return mBtc;
